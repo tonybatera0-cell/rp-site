@@ -13,7 +13,7 @@ background:linear-gradient(180deg,#020617,#05070f);
 color:#fff;
 }
 
-/* HEADER PREMIUM */
+/* HEADER */
 header{
 background:rgba(15,23,42,0.7);
 backdrop-filter:blur(12px);
@@ -45,7 +45,7 @@ padding:60px 20px;
 text-align:center;
 }
 
-/* BOTÃO PREMIUM */
+/* BOTÕES PULSANTES */
 .btn{
 background:linear-gradient(145deg,#00ffcc,#25D366);
 color:#000;
@@ -58,12 +58,19 @@ margin-top:20px;
 width:80%;
 max-width:300px;
 box-shadow:0 6px 20px rgba(0,255,204,0.3);
+animation:pulseGlow 2s infinite;
 transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px) scale(1.03);
-box-shadow:0 10px 30px rgba(0,255,204,0.5);
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(0,255,204,0.6);
+}
+
+@keyframes pulseGlow{
+0%{transform:scale(1);box-shadow:0 0 10px rgba(0,255,204,0.3);}
+50%{transform:scale(1.05);box-shadow:0 0 25px rgba(0,255,204,0.7);}
+100%{transform:scale(1);box-shadow:0 0 10px rgba(0,255,204,0.3);}
 }
 
 /* PLANOS */
@@ -142,27 +149,15 @@ background:linear-gradient(45deg,#009c3b,#002776);
 }
 
 /* BANDEIRAS */
-.flags-wrapper{
-overflow:hidden;
-margin-top:25px;
-}
-
+.flags-wrapper{overflow:hidden;margin-top:25px;}
 .flags-track{
 white-space:nowrap;
 display:inline-block;
 font-size:2.3em;
 animation:scroll 25s linear infinite;
 }
-
-.flags-track span{
-margin:0 12px;
-transition:.3s;
-}
-
-.flags-track span:hover{
-transform:scale(1.3);
-}
-
+.flags-track span{margin:0 12px;transition:.3s;}
+.flags-track span:hover{transform:scale(1.3);}
 @keyframes scroll{
 0%{transform:translateX(0)}
 100%{transform:translateX(-50%)}
@@ -177,10 +172,7 @@ animation:blink 1s infinite;
 margin-top:15px;
 border-radius:8px;
 }
-
-@keyframes blink{
-50%{opacity:.4}
-}
+@keyframes blink{50%{opacity:.4}}
 
 .ticker{
 overflow:hidden;
@@ -196,10 +188,7 @@ animation:ticker 20s linear infinite;
 color:#00ffcc;
 font-weight:bold;
 }
-
-@keyframes ticker{
-100%{transform:translateX(-50%)}
-}
+@keyframes ticker{100%{transform:translateX(-50%)}}
 
 /* BOTÃO FLUTUANTE */
 .float{
@@ -211,8 +200,14 @@ padding:18px;
 border-radius:50px;
 color:#000;
 font-weight:bold;
+box-shadow:0 10px 25px rgba(0,255,204,0.5);
+animation:pulseFloat 2s infinite;
 }
-
+@keyframes pulseFloat{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
 </style>
 </head>
 
@@ -225,16 +220,12 @@ font-weight:bold;
 <p style="color:#00ffcc;font-weight:bold;">🔥 Tudo em um único app pagando menos</p>
 </header>
 
-<div class="alert">
-⏳ Copa do Mundo prestes a começar — garanta seu acesso
-</div>
+<div class="alert">⏳ Copa do Mundo prestes a começar — garanta seu acesso</div>
 
 <section class="section">
 <h2>🚨 Veja como funciona</h2>
-
 <iframe src="https://www.youtube.com/embed/82CyzF4tYb4"
 style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
-
 <a href="https://wa.me/5511957197274" class="btn">👉 Falar no WhatsApp</a>
 </section>
 
@@ -260,7 +251,6 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 
 <div class="flags-wrapper">
 <div class="flags-track">
-
 <span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇩🇪</span>
 <span>🇪🇸</span><span>🇵🇹</span><span>🇺🇸</span><span>🇯🇵</span>
 <span>🇰🇷</span><span>🇲🇽</span><span>🇨🇦</span>
@@ -268,48 +258,39 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇩🇪</span>
 <span>🇪🇸</span><span>🇵🇹</span><span>🇺🇸</span><span>🇯🇵</span>
 <span>🇰🇷</span><span>🇲🇽</span><span>🇨🇦</span>
-
 </div>
 </div>
 
 <div id="contador" class="contador-max"></div>
-
 <a href="https://wa.me/5511957197274" class="btn">🔥 QUERO ASSISTIR</a>
 </section>
 
 <section class="section">
-
 <h2>📡 AO VIVO AGORA</h2>
-
-<div class="live-bar">
-🔴 TRANSMISSÃO ATIVA
-</div>
-
+<div class="live-bar">🔴 TRANSMISSÃO ATIVA</div>
 <div class="ticker">
 <div class="ticker-track">
 ⚽ Jogos ao vivo • 🎬 Filmes • 📺 Séries • 🏆 Campeonatos • ⚽ Jogos ao vivo • 🎬 Filmes • 📺 Séries • 🏆 Campeonatos
 </div>
 </div>
-
 </section>
 
 <section class="section">
 <h2>💰 Planos</h2>
 
 <div class="plans">
-
 <div class="plan">
 <h3>Mensal</h3>
 <div class="old">R$59,99</div>
 <div class="price">R$39,99</div>
-<a href="#" class="btn">Escolher</a>
+<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
 
 <div class="plan">
 <h3>Trimestral</h3>
 <div class="old">R$119,99</div>
 <div class="price">R$89,99</div>
-<a href="#" class="btn">Escolher</a>
+<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
 
 <div class="plan highlight">
@@ -317,18 +298,16 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <h3>Semestral</h3>
 <div class="old">R$199,99</div>
 <div class="price">R$149,99</div>
-<a href="#" class="btn">🔥 Quero esse</a>
+<a href="https://wa.me/5511957197274" class="btn">🔥 Quero esse</a>
 </div>
 
 <div class="plan">
 <h3>Anual</h3>
 <div class="old">R$359,99</div>
 <div class="price">R$279,99</div>
-<a href="#" class="btn">Escolher</a>
+<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
-
 </div>
-
 </section>
 
 <section class="section">
@@ -344,8 +323,7 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 </footer>
 
 <script>
-const data = new Date("June 11, 2026 15:00:00").getTime();
-
+const data=new Date("June 11, 2026 15:00:00").getTime();
 setInterval(()=>{
 let now=new Date().getTime();
 let dist=data-now;
