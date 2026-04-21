@@ -14,6 +14,7 @@ color:#fff;
 overflow-x:hidden;
 }
 
+/* HEADER */
 header{
 background:linear-gradient(90deg,#ff004c,#ff7a00);
 padding:30px;
@@ -26,6 +27,7 @@ max-width:220px;
 animation:glow 2s infinite alternate;
 }
 
+/* ALERT */
 .alert{
 background:#ff004c;
 padding:10px;
@@ -34,11 +36,13 @@ font-weight:bold;
 animation:pulse 2s infinite;
 }
 
+/* SECTION */
 .section{
 padding:60px 20px;
 text-align:center;
 }
 
+/* BOTÕES */
 .btn{
 background:linear-gradient(45deg,#00ffcc,#25D366);
 color:#000;
@@ -54,6 +58,7 @@ box-shadow:0 0 20px #00ffcc;
 animation:pulse 1.5s infinite;
 }
 
+/* PLANOS */
 .plans{
 display:flex;
 flex-wrap:wrap;
@@ -104,6 +109,7 @@ font-size:.8em;
 font-weight:bold;
 }
 
+/* FEATURES */
 .features{
 display:grid;
 gap:15px;
@@ -119,28 +125,63 @@ border-radius:12px;
 box-shadow:0 0 15px rgba(0,255,204,0.2);
 }
 
+/* CONTADOR PESSOAS */
 .counter{
 margin-top:30px;
 color:#00ffcc;
 font-weight:bold;
 }
 
-footer{
-background:#020617;
-padding:20px;
-text-align:center;
+/* CONTADOR COPA ULTRA */
+.contador-max{
+font-size:2.4em;
+font-weight:bold;
+margin-top:30px;
+padding:25px 30px;
+border-radius:20px;
+display:inline-block;
+position:relative;
+background:linear-gradient(45deg,#009c3b,#ffdf00,#002776);
+color:#fff;
+text-shadow:0 0 10px #fff,0 0 20px #00ffcc,0 0 30px #00ffcc;
+transform:perspective(500px) rotateX(5deg);
+box-shadow:0 15px 40px rgba(0,0,0,0.8),0 0 20px #00ffcc,0 0 40px #00ffcc;
+animation:pulseMax 1.5s infinite alternate,vibrate 0.2s infinite;
 }
 
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
+.contador-max::before{
+content:"";
+position:absolute;
+top:-3px;
+left:-3px;
+right:-3px;
+bottom:-3px;
+border-radius:22px;
+background:linear-gradient(90deg,#00ffcc,#ffdf00,#00ffcc);
+z-index:-1;
+filter:blur(10px);
+animation:energyFlow 3s linear infinite;
 }
 
-@keyframes glow{
-0%{filter:drop-shadow(0 0 5px #ff004c)}
-100%{filter:drop-shadow(0 0 25px #ff7a00)}
+/* FLOAT BUTTON */
+.float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:18px;
+border-radius:50px;
+color:#fff;
+font-weight:bold;
+box-shadow:0 0 20px #25D366;
 }
+
+/* ANIMAÇÕES */
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes glow{0%{filter:drop-shadow(0 0 5px #ff004c)}100%{filter:drop-shadow(0 0 25px #ff7a00)}}
+@keyframes pulseMax{0%{transform:scale(1) perspective(500px) rotateX(5deg)}100%{transform:scale(1.08) perspective(500px) rotateX(5deg)}}
+@keyframes vibrate{0%{transform:translate(0)}25%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}75%{transform:translate(1px,1px)}100%{transform:translate(0)}}
+@keyframes energyFlow{0%{background-position:0%}100%{background-position:200%}}
 </style>
 </head>
 
@@ -154,7 +195,7 @@ text-align:center;
 </header>
 
 <div class="alert">
-⚠️ Promoção ativa hoje - poucas vagas restantes
+⏳ Copa do Mundo prestes a começar — garanta seu acesso antes que acabe!
 </div>
 
 <section class="section">
@@ -163,9 +204,7 @@ text-align:center;
 <iframe src="https://www.youtube.com/embed/82CyzF4tYb4"
 style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"></iframe>
 
-<a href="https://wa.me/5511957197274" class="btn">
-👉 Falar no WhatsApp
-</a>
+<a href="https://wa.me/5511957197274" class="btn">👉 Falar no WhatsApp</a>
 </section>
 
 <section class="section">
@@ -173,25 +212,34 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 <p>Filmes, séries, esportes e muito mais em um único app.</p>
 </section>
 
-<!-- NOVA SEÇÃO -->
 <section class="section">
 <h2>🎁 Benefícios exclusivos</h2>
-
 <div class="features">
-
-<div>🎉 Promoções e sorteios totalmente GRATUITOS para clientes</div>
-
-<div>⚽ Atualizações diárias com jogos ao vivo</div>
-
-<div>📺 Canais, filmes e séries sempre atualizados</div>
-
-<div>🚀 Trabalhamos com os melhores apps do mercado</div>
-
+<div>🎉 Promoções e sorteios GRATUITOS</div>
+<div>⚽ Jogos ao vivo atualizados diariamente</div>
+<div>📺 Filmes e séries sempre atualizados</div>
+<div>🚀 Melhores apps do mercado</div>
 <div>🔥 Conteúdo liberado todos os dias</div>
-
-<div>💎 Experiência premium sem travamentos</div>
-
+<div>💎 Experiência premium</div>
 </div>
+</section>
+
+<section class="section">
+<h2>🏆 Copa do Mundo está chegando</h2>
+
+<div style="font-size:2em; margin-top:15px;">
+🇧🇷 🇦🇷 🇫🇷 🇩🇪 🇪🇸 🇵🇹 🇮🇹 🇳🇱 🇺🇸 🇲🇽 🇯🇵 🇰🇷 🇨🇦 🇦🇺 🇲🇦 🇸🇳 🇬🇭 🇸🇦
+</div>
+
+<div id="contador" class="contador-max">Carregando...</div>
+
+<a href="https://wa.me/5511957197274" class="btn">🔥 QUERO ASSISTIR</a>
+</section>
+
+<section class="section">
+<h2 style="color:#ff004c;">⚠️ NÃO FIQUE DE FORA</h2>
+<p>A Copa acontece a cada 4 anos... garanta seu acesso antes.</p>
+<a href="https://wa.me/5511957197274" class="btn">🚀 GARANTIR AGORA</a>
 </section>
 
 <section class="section">
@@ -201,31 +249,31 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 
 <div class="plan">
 <h3>Mensal</h3>
-<div class="old">R$ 59,99</div>
-<div class="price">R$ 39,99</div>
-<a href="https://wa.me/5511957197274?text=Quero Mensal" class="btn">Escolher</a>
+<div class="old">R$59,99</div>
+<div class="price">R$39,99</div>
+<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
 
 <div class="plan">
 <h3>Trimestral</h3>
-<div class="old">R$ 119,99</div>
-<div class="price">R$ 89,99</div>
-<a href="https://wa.me/5511957197274?text=Quero Trimestral" class="btn">Escolher</a>
+<div class="old">R$119,99</div>
+<div class="price">R$89,99</div>
+<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
 
 <div class="plan highlight">
 <div class="badge">MAIS VENDIDO</div>
 <h3>Semestral</h3>
-<div class="old">R$ 199,99</div>
-<div class="price">R$ 149,99</div>
-<a href="https://wa.me/5511957197274?text=Quero Semestral" class="btn">🔥 Quero esse</a>
+<div class="old">R$199,99</div>
+<div class="price">R$149,99</div>
+<a href="https://wa.me/5511957197274" class="btn">🔥 Quero esse</a>
 </div>
 
 <div class="plan">
 <h3>Anual</h3>
-<div class="old">R$ 359,99</div>
-<div class="price">R$ 279,99</div>
-<a href="https://wa.me/5511957197274?text=Quero Anual" class="btn">Escolher</a>
+<div class="old">R$359,99</div>
+<div class="price">R$279,99</div>
+<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
 
 </div>
@@ -237,45 +285,38 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 </section>
 
 <section class="section">
-<h2>🔥 Tudo que você recebe ao entrar</h2>
-
-<div class="features">
-<div>🎬 Catálogo completo atualizado diariamente</div>
-<div>📺 Qualidade HD e 4K</div>
-<div>📱 Funciona em qualquer dispositivo</div>
-<div>📡 Canais ao vivo liberados</div>
-<div>👨‍👩‍👧 Multiusuários</div>
-<div>💬 Suporte 24 horas</div>
-<div>⚡ Ativação imediata</div>
-</div>
-</section>
-
-<section class="section">
 <h2>📱 Compatível com:</h2>
-<p>Smart TV • Android • iPhone • TV Box • Notebook • Tablet</p>
-
-<a href="https://wa.me/5511957197274" class="btn">
-🔥 Quero aderir agora
-</a>
+<p>Smart TV • Android • iPhone • TV Box • Notebook</p>
+<a href="https://wa.me/5511957197274" class="btn">🔥 Quero aderir agora</a>
 </section>
 
-<a href="https://wa.me/5511957197274"
-style="position:fixed;bottom:20px;right:20px;background:#25D366;padding:18px;border-radius:50px;color:#fff;font-weight:bold;box-shadow:0 0 20px #25D366;">
-💬
-</a>
+<a href="https://wa.me/5511957197274" class="float">💬</a>
 
 <footer>
 <p>&copy; 2026 RP Entretenimento</p>
 </footer>
 
 <script>
+// CONTADOR COPA
+const dataCopa = new Date("June 11, 2026 15:00:00").getTime();
 setInterval(()=>{
-let num = document.getElementById("viewers");
-let value = parseInt(num.innerText);
-value += Math.floor(Math.random()*3 -1);
-if(value < 15) value = 15;
-if(value > 40) value = 40;
-num.innerText = value;
+let agora=new Date().getTime();
+let dist=dataCopa-agora;
+let d=Math.floor(dist/(1000*60*60*24));
+let h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((dist%(1000*60*60))/(1000*60));
+let s=Math.floor((dist%(1000*60))/1000);
+document.getElementById("contador").innerHTML=d+"d "+h+"h "+m+"m "+s+"s";
+},1000);
+
+// CONTADOR VISUALIZAÇÕES
+setInterval(()=>{
+let num=document.getElementById("viewers");
+let val=parseInt(num.innerText);
+val+=Math.floor(Math.random()*3-1);
+if(val<15)val=15;
+if(val>40)val=40;
+num.innerText=val;
 },3000);
 </script>
 
