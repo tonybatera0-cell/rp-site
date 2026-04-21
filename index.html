@@ -6,32 +6,48 @@
 <title>RP Entretenimento</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#05070f;color:#fff}
-
-/* HEADER */
-header{
-background:linear-gradient(90deg,#ff004c,#ff7a00);
-padding:30px;text-align:center;
-box-shadow:0 0 40px rgba(255,0,76,0.8)
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(180deg,#020617,#05070f);
+color:#fff;
 }
 
-.logo img{max-width:220px}
+/* HEADER PREMIUM */
+header{
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(12px);
+padding:30px;
+text-align:center;
+border-bottom:1px solid rgba(0,255,204,0.2);
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+.logo img{
+max-width:220px;
+filter:drop-shadow(0 0 10px rgba(0,255,204,0.5));
+}
 
 /* ALERTA */
 .alert{
-background:#ff004c;
+background:linear-gradient(90deg,#00ffcc,#25D366);
+color:#000;
 padding:10px;
 text-align:center;
 font-weight:bold;
-animation:pulse 2s infinite
+border-radius:8px;
+margin:10px;
 }
 
 /* SECTION */
-.section{padding:60px 20px;text-align:center}
+.section{
+padding:60px 20px;
+text-align:center;
+}
 
-/* BOTÃO */
+/* BOTÃO PREMIUM */
 .btn{
-background:linear-gradient(45deg,#00ffcc,#25D366);
+background:linear-gradient(145deg,#00ffcc,#25D366);
 color:#000;
 padding:16px;
 border-radius:12px;
@@ -41,59 +57,80 @@ display:inline-block;
 margin-top:20px;
 width:80%;
 max-width:300px;
-animation:pulse 1.5s infinite;
+box-shadow:0 6px 20px rgba(0,255,204,0.3);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 10px 30px rgba(0,255,204,0.5);
 }
 
 /* PLANOS */
 .plans{display:flex;flex-wrap:wrap;justify-content:center;gap:25px}
 
 .plan{
-background:#0f172a;
+background:rgba(15,23,42,0.6);
+backdrop-filter:blur(10px);
 padding:30px;
 border-radius:20px;
 width:270px;
-box-shadow:0 0 25px rgba(0,255,204,0.2);
+border:1px solid rgba(0,255,204,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 transition:.3s;
-position:relative
+position:relative;
 }
 
-.plan:hover{transform:scale(1.07)}
+.plan:hover{
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 15px 40px rgba(0,255,204,0.3);
+}
 
 .highlight{
 border:2px solid #00ffcc;
-transform:scale(1.1)
+box-shadow:0 0 25px rgba(0,255,204,0.5);
 }
-
-.price{font-size:2em;color:#00ffcc}
-.old{text-decoration:line-through;color:#888}
 
 .badge{
 position:absolute;
-top:-10px;right:-10px;
-background:#00ffcc;color:#000;
-padding:5px 10px;border-radius:10px;
-font-size:.8em
+top:-10px;
+right:-10px;
+background:#00ffcc;
+color:#000;
+padding:6px 12px;
+border-radius:20px;
+font-size:.75em;
+font-weight:bold;
+box-shadow:0 0 10px rgba(0,255,204,0.7);
 }
 
-/* BENEFÍCIOS */
+.price{
+font-size:2em;
+color:#00ffcc;
+text-shadow:0 0 10px rgba(0,255,204,0.5);
+}
+
+.old{
+text-decoration:line-through;
+color:#777;
+}
+
+/* FEATURES */
 .features{
 display:grid;
 gap:15px;
 max-width:650px;
 margin:auto;
-text-align:left
+text-align:left;
 }
 
 .features div{
-background:#0f172a;
+background:rgba(15,23,42,0.6);
 padding:18px;
-border-radius:12px
+border-radius:12px;
 }
 
-/* CONTADOR VISUALIZAÇÃO */
-.counter{margin-top:30px;color:#00ffcc}
-
-/* CONTADOR COPA */
+/* CONTADOR */
 .contador-max{
 font-size:2em;
 font-weight:bold;
@@ -102,48 +139,66 @@ padding:18px 25px;
 border-radius:12px;
 display:inline-block;
 background:linear-gradient(45deg,#009c3b,#002776);
-color:#fff;
-box-shadow:0 8px 20px rgba(0,0,0,0.5);
-animation:fadePulse 2s infinite;
 }
 
-@keyframes fadePulse{
-0%{opacity:.9;transform:scale(1)}
-50%{opacity:1;transform:scale(1.03)}
-100%{opacity:.9;transform:scale(1)}
-}
-
-/* BANDEIRAS (SEM BORDA LATERAL) */
+/* BANDEIRAS */
 .flags-wrapper{
 overflow:hidden;
-width:100%;
 margin-top:25px;
 }
 
 .flags-track{
-display:inline-block;
 white-space:nowrap;
+display:inline-block;
 font-size:2.3em;
-animation:scrollUltra 25s linear infinite;
+animation:scroll 25s linear infinite;
 }
 
 .flags-track span{
 margin:0 12px;
-display:inline-block;
-transition:0.3s;
+transition:.3s;
 }
 
 .flags-track span:hover{
 transform:scale(1.3);
 }
 
-@keyframes scrollUltra{
+@keyframes scroll{
 0%{transform:translateX(0)}
 100%{transform:translateX(-50%)}
 }
 
-.flags-wrapper:active .flags-track{
-animation-play-state:paused;
+/* ESPN */
+.live-bar{
+background:#ff0000;
+padding:12px;
+font-weight:bold;
+animation:blink 1s infinite;
+margin-top:15px;
+border-radius:8px;
+}
+
+@keyframes blink{
+50%{opacity:.4}
+}
+
+.ticker{
+overflow:hidden;
+background:#000;
+padding:10px;
+margin-top:10px;
+}
+
+.ticker-track{
+white-space:nowrap;
+display:inline-block;
+animation:ticker 20s linear infinite;
+color:#00ffcc;
+font-weight:bold;
+}
+
+@keyframes ticker{
+100%{transform:translateX(-50%)}
 }
 
 /* BOTÃO FLUTUANTE */
@@ -151,19 +206,13 @@ animation-play-state:paused;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25D366;
+background:linear-gradient(145deg,#25D366,#00ffcc);
 padding:18px;
 border-radius:50px;
-color:#fff;
+color:#000;
 font-weight:bold;
 }
 
-/* ANIMAÇÃO */
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
-}
 </style>
 </head>
 
@@ -173,25 +222,25 @@ font-weight:bold;
 <div class="logo">
 <img src="logo.png">
 </div>
-<p>🔥 Tudo em um único app pagando menos</p>
+<p style="color:#00ffcc;font-weight:bold;">🔥 Tudo em um único app pagando menos</p>
 </header>
 
 <div class="alert">
-⏳ Copa do Mundo prestes a começar — garanta seu acesso antes que acabe!
+⏳ Copa do Mundo prestes a começar — garanta seu acesso
 </div>
 
 <section class="section">
 <h2>🚨 Veja como funciona</h2>
 
 <iframe src="https://www.youtube.com/embed/82CyzF4tYb4"
-style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"></iframe>
+style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 
 <a href="https://wa.me/5511957197274" class="btn">👉 Falar no WhatsApp</a>
 </section>
 
 <section class="section">
-<h2>💥 Acesso completo</h2>
-<p>Filmes, séries, esportes e muito mais em um único app.</p>
+<h2>💎 Experiência Premium Completa</h2>
+<p>Acesse o melhor do entretenimento com qualidade máxima.</p>
 </section>
 
 <section class="section">
@@ -201,51 +250,51 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 <div>⚽ Jogos ao vivo atualizados diariamente</div>
 <div>📺 Filmes e séries sempre atualizados</div>
 <div>🚀 Melhores apps do mercado</div>
-<div>🔥 Conteúdo liberado todos os dias</div>
-<div>💎 Experiência premium</div>
+<div>💎 Qualidade HD / 4K</div>
+<div>📱 Funciona em todos dispositivos</div>
 </div>
 </section>
 
 <section class="section">
-<h2>🏆 Copa do Mundo está chegando</h2>
-
-<p>🌎 Assista todas as seleções classificadas e favoritas AO VIVO</p>
+<h2>🏆 Copa do Mundo chegando</h2>
 
 <div class="flags-wrapper">
 <div class="flags-track">
 
-<span>🇧🇷</span><span>🇦🇷</span><span>🇺🇾</span><span>🇪🇨</span>
-<span>🇫🇷</span><span>🇩🇪</span><span>🇪🇸</span><span>🇵🇹</span>
-<span>🇳🇱</span><span>🇧🇪</span><span>🇭🇷</span><span>🇷🇸</span>
-<span>🇨🇭</span><span>🇩🇰</span><span>🇺🇸</span><span>🇲🇽</span>
-<span>🇨🇦</span><span>🇯🇵</span><span>🇰🇷</span><span>🇸🇦</span>
-<span>🇮🇷</span><span>🇲🇦</span><span>🇸🇳</span><span>🇨🇲</span>
-<span>🇬🇭</span><span>🇦🇺</span>
+<span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇩🇪</span>
+<span>🇪🇸</span><span>🇵🇹</span><span>🇺🇸</span><span>🇯🇵</span>
+<span>🇰🇷</span><span>🇲🇽</span><span>🇨🇦</span>
 
-<span>🇧🇷</span><span>🇦🇷</span><span>🇺🇾</span><span>🇪🇨</span>
-<span>🇫🇷</span><span>🇩🇪</span><span>🇪🇸</span><span>🇵🇹</span>
-<span>🇳🇱</span><span>🇧🇪</span><span>🇭🇷</span><span>🇷🇸</span>
-<span>🇨🇭</span><span>🇩🇰</span><span>🇺🇸</span><span>🇲🇽</span>
-<span>🇨🇦</span><span>🇯🇵</span><span>🇰🇷</span><span>🇸🇦</span>
-<span>🇮🇷</span><span>🇲🇦</span><span>🇸🇳</span><span>🇨🇲</span>
-<span>🇬🇭</span><span>🇦🇺</span>
+<span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇩🇪</span>
+<span>🇪🇸</span><span>🇵🇹</span><span>🇺🇸</span><span>🇯🇵</span>
+<span>🇰🇷</span><span>🇲🇽</span><span>🇨🇦</span>
 
 </div>
 </div>
 
-<div id="contador" class="contador-max">Carregando...</div>
+<div id="contador" class="contador-max"></div>
 
 <a href="https://wa.me/5511957197274" class="btn">🔥 QUERO ASSISTIR</a>
 </section>
 
 <section class="section">
-<h2 style="color:#ff004c;">⚠️ NÃO FIQUE DE FORA</h2>
-<p>A Copa acontece a cada 4 anos... garanta seu acesso antes.</p>
-<a href="https://wa.me/5511957197274" class="btn">🚀 GARANTIR AGORA</a>
+
+<h2>📡 AO VIVO AGORA</h2>
+
+<div class="live-bar">
+🔴 TRANSMISSÃO ATIVA
+</div>
+
+<div class="ticker">
+<div class="ticker-track">
+⚽ Jogos ao vivo • 🎬 Filmes • 📺 Séries • 🏆 Campeonatos • ⚽ Jogos ao vivo • 🎬 Filmes • 📺 Séries • 🏆 Campeonatos
+</div>
+</div>
+
 </section>
 
 <section class="section">
-<h2>💰 Escolha seu plano</h2>
+<h2>💰 Planos</h2>
 
 <div class="plans">
 
@@ -253,14 +302,14 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 <h3>Mensal</h3>
 <div class="old">R$59,99</div>
 <div class="price">R$39,99</div>
-<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
+<a href="#" class="btn">Escolher</a>
 </div>
 
 <div class="plan">
 <h3>Trimestral</h3>
 <div class="old">R$119,99</div>
 <div class="price">R$89,99</div>
-<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
+<a href="#" class="btn">Escolher</a>
 </div>
 
 <div class="plan highlight">
@@ -268,57 +317,44 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 <h3>Semestral</h3>
 <div class="old">R$199,99</div>
 <div class="price">R$149,99</div>
-<a href="https://wa.me/5511957197274" class="btn">🔥 Quero esse</a>
+<a href="#" class="btn">🔥 Quero esse</a>
 </div>
 
 <div class="plan">
 <h3>Anual</h3>
 <div class="old">R$359,99</div>
 <div class="price">R$279,99</div>
-<a href="https://wa.me/5511957197274" class="btn">Escolher</a>
+<a href="#" class="btn">Escolher</a>
 </div>
 
-</div>
-
-<div class="counter">
-👁️ <span id="viewers">23</span> pessoas estão vendo agora
 </div>
 
 </section>
 
 <section class="section">
-<h2>📱 Compatível com:</h2>
+<h2>📱 Compatibilidade</h2>
 <p>Smart TV • Android • iPhone • TV Box • Notebook</p>
 <a href="https://wa.me/5511957197274" class="btn">🔥 Quero aderir agora</a>
 </section>
 
 <a href="https://wa.me/5511957197274" class="float">💬</a>
 
-<footer>
-<p>&copy; 2026 RP Entretenimento</p>
+<footer style="text-align:center;padding:20px;">
+© 2026 RP Entretenimento
 </footer>
 
 <script>
-const dataCopa = new Date("June 11, 2026 15:00:00").getTime();
+const data = new Date("June 11, 2026 15:00:00").getTime();
 
 setInterval(()=>{
-let agora=new Date().getTime();
-let dist=dataCopa-agora;
+let now=new Date().getTime();
+let dist=data-now;
 let d=Math.floor(dist/(1000*60*60*24));
 let h=Math.floor((dist%(1000*60*60*24))/(1000*60*60));
 let m=Math.floor((dist%(1000*60*60))/(1000*60));
 let s=Math.floor((dist%(1000*60))/1000);
 document.getElementById("contador").innerHTML=d+"d "+h+"h "+m+"m "+s+"s";
 },1000);
-
-setInterval(()=>{
-let num=document.getElementById("viewers");
-let val=parseInt(num.innerText);
-val+=Math.floor(Math.random()*3-1);
-if(val<15)val=15;
-if(val>40)val=40;
-num.innerText=val;
-},3000);
 </script>
 
 </body>
