@@ -6,43 +6,30 @@
 <title>RP Entretenimento</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#05070f;
-color:#fff;
-overflow-x:hidden;
-}
+body{margin:0;font-family:Arial;background:#05070f;color:#fff}
 
 /* HEADER */
 header{
 background:linear-gradient(90deg,#ff004c,#ff7a00);
-padding:30px;
-text-align:center;
-box-shadow:0 0 40px rgba(255,0,76,0.8);
+padding:30px;text-align:center;
+box-shadow:0 0 40px rgba(255,0,76,0.8)
 }
 
-.logo img{
-max-width:220px;
-animation:glow 2s infinite alternate;
-}
+.logo img{max-width:220px}
 
-/* ALERT */
+/* ALERTA */
 .alert{
 background:#ff004c;
 padding:10px;
 text-align:center;
 font-weight:bold;
-animation:pulse 2s infinite;
+animation:pulse 2s infinite
 }
 
 /* SECTION */
-.section{
-padding:60px 20px;
-text-align:center;
-}
+.section{padding:60px 20px;text-align:center}
 
-/* BOTÕES */
+/* BOTÃO */
 .btn{
 background:linear-gradient(45deg,#00ffcc,#25D366);
 color:#000;
@@ -54,17 +41,11 @@ display:inline-block;
 margin-top:20px;
 width:80%;
 max-width:300px;
-box-shadow:0 0 20px #00ffcc;
 animation:pulse 1.5s infinite;
 }
 
 /* PLANOS */
-.plans{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-}
+.plans{display:flex;flex-wrap:wrap;justify-content:center;gap:25px}
 
 .plan{
 background:#0f172a;
@@ -73,97 +54,121 @@ border-radius:20px;
 width:270px;
 box-shadow:0 0 25px rgba(0,255,204,0.2);
 transition:.3s;
-position:relative;
+position:relative
 }
 
-.plan:hover{
-transform:scale(1.07);
-box-shadow:0 0 40px rgba(0,255,204,0.7);
-}
+.plan:hover{transform:scale(1.07)}
 
 .highlight{
 border:2px solid #00ffcc;
-transform:scale(1.1);
-box-shadow:0 0 40px #00ffcc;
+transform:scale(1.1)
 }
 
-.price{
-font-size:2.2em;
-color:#00ffcc;
-}
-
-.old{
-text-decoration:line-through;
-color:#888;
-}
+.price{font-size:2em;color:#00ffcc}
+.old{text-decoration:line-through;color:#888}
 
 .badge{
 position:absolute;
-top:-10px;
-right:-10px;
-background:#00ffcc;
-color:#000;
-padding:5px 10px;
-border-radius:10px;
-font-size:.8em;
-font-weight:bold;
+top:-10px;right:-10px;
+background:#00ffcc;color:#000;
+padding:5px 10px;border-radius:10px;
+font-size:.8em
 }
 
-/* FEATURES */
+/* BENEFÍCIOS */
 .features{
 display:grid;
 gap:15px;
 max-width:650px;
 margin:auto;
-text-align:left;
+text-align:left
 }
 
 .features div{
 background:#0f172a;
 padding:18px;
-border-radius:12px;
-box-shadow:0 0 15px rgba(0,255,204,0.2);
+border-radius:12px
 }
 
-/* CONTADOR PESSOAS */
-.counter{
-margin-top:30px;
-color:#00ffcc;
-font-weight:bold;
-}
+/* CONTADOR VISUALIZAÇÃO */
+.counter{margin-top:30px;color:#00ffcc}
 
-/* CONTADOR COPA ULTRA */
+/* CONTADOR COPA (ELEGANTE) */
 .contador-max{
-font-size:2.4em;
+font-size:2em;
 font-weight:bold;
-margin-top:30px;
-padding:25px 30px;
-border-radius:20px;
+margin-top:25px;
+padding:18px 25px;
+border-radius:12px;
 display:inline-block;
-position:relative;
-background:linear-gradient(45deg,#009c3b,#ffdf00,#002776);
+background:linear-gradient(45deg,#009c3b,#002776);
 color:#fff;
-text-shadow:0 0 10px #fff,0 0 20px #00ffcc,0 0 30px #00ffcc;
-transform:perspective(500px) rotateX(5deg);
-box-shadow:0 15px 40px rgba(0,0,0,0.8),0 0 20px #00ffcc,0 0 40px #00ffcc;
-animation:pulseMax 1.5s infinite alternate,vibrate 0.2s infinite;
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+animation:fadePulse 2s infinite;
 }
 
-.contador-max::before{
+@keyframes fadePulse{
+0%{opacity:.9;transform:scale(1)}
+50%{opacity:1;transform:scale(1.03)}
+100%{opacity:.9;transform:scale(1)}
+}
+
+/* BANDEIRAS ULTRA */
+.flags-wrapper{
+position:relative;
+overflow:hidden;
+width:100%;
+margin-top:25px;
+}
+
+.flags-wrapper::before,
+.flags-wrapper::after{
 content:"";
 position:absolute;
-top:-3px;
-left:-3px;
-right:-3px;
-bottom:-3px;
-border-radius:22px;
-background:linear-gradient(90deg,#00ffcc,#ffdf00,#00ffcc);
-z-index:-1;
-filter:blur(10px);
-animation:energyFlow 3s linear infinite;
+top:0;
+width:80px;
+height:100%;
+z-index:2;
+pointer-events:none;
 }
 
-/* FLOAT BUTTON */
+.flags-wrapper::before{
+left:0;
+background:linear-gradient(to right,#05070f,transparent);
+}
+
+.flags-wrapper::after{
+right:0;
+background:linear-gradient(to left,#05070f,transparent);
+}
+
+.flags-track{
+display:inline-block;
+white-space:nowrap;
+font-size:2.3em;
+animation:scrollUltra 25s linear infinite;
+}
+
+.flags-track span{
+margin:0 10px;
+display:inline-block;
+transition:0.3s;
+}
+
+.flags-track span:hover{
+transform:scale(1.3);
+}
+
+@keyframes scrollUltra{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
+.flags-wrapper:active .flags-track{
+animation-play-state:paused;
+}
+
+/* BOTÃO FLUTUANTE */
 .float{
 position:fixed;
 bottom:20px;
@@ -173,15 +178,14 @@ padding:18px;
 border-radius:50px;
 color:#fff;
 font-weight:bold;
-box-shadow:0 0 20px #25D366;
 }
 
-/* ANIMAÇÕES */
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
-@keyframes glow{0%{filter:drop-shadow(0 0 5px #ff004c)}100%{filter:drop-shadow(0 0 25px #ff7a00)}}
-@keyframes pulseMax{0%{transform:scale(1) perspective(500px) rotateX(5deg)}100%{transform:scale(1.08) perspective(500px) rotateX(5deg)}}
-@keyframes vibrate{0%{transform:translate(0)}25%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}75%{transform:translate(1px,1px)}100%{transform:translate(0)}}
-@keyframes energyFlow{0%{background-position:0%}100%{background-position:200%}}
+/* ANIMAÇÃO */
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
 </style>
 </head>
 
@@ -227,8 +231,28 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 <section class="section">
 <h2>🏆 Copa do Mundo está chegando</h2>
 
-<div style="font-size:2em; margin-top:15px;">
-🇧🇷 🇦🇷 🇫🇷 🇩🇪 🇪🇸 🇵🇹 🇮🇹 🇳🇱 🇺🇸 🇲🇽 🇯🇵 🇰🇷 🇨🇦 🇦🇺 🇲🇦 🇸🇳 🇬🇭 🇸🇦
+<p>🌎 Assista todas as seleções classificadas e favoritas AO VIVO</p>
+
+<div class="flags-wrapper">
+<div class="flags-track">
+
+<span>🇧🇷</span><span>🇦🇷</span><span>🇺🇾</span><span>🇪🇨</span>
+<span>🇫🇷</span><span>🇩🇪</span><span>🇪🇸</span><span>🇵🇹</span>
+<span>🇳🇱</span><span>🇧🇪</span><span>🇭🇷</span><span>🇷🇸</span>
+<span>🇨🇭</span><span>🇩🇰</span><span>🇺🇸</span><span>🇲🇽</span>
+<span>🇨🇦</span><span>🇯🇵</span><span>🇰🇷</span><span>🇸🇦</span>
+<span>🇮🇷</span><span>🇲🇦</span><span>🇸🇳</span><span>🇨🇲</span>
+<span>🇬🇭</span><span>🇦🇺</span>
+
+<span>🇧🇷</span><span>🇦🇷</span><span>🇺🇾</span><span>🇪🇨</span>
+<span>🇫🇷</span><span>🇩🇪</span><span>🇪🇸</span><span>🇵🇹</span>
+<span>🇳🇱</span><span>🇧🇪</span><span>🇭🇷</span><span>🇷🇸</span>
+<span>🇨🇭</span><span>🇩🇰</span><span>🇺🇸</span><span>🇲🇽</span>
+<span>🇨🇦</span><span>🇯🇵</span><span>🇰🇷</span><span>🇸🇦</span>
+<span>🇮🇷</span><span>🇲🇦</span><span>🇸🇳</span><span>🇨🇲</span>
+<span>🇬🇭</span><span>🇦🇺</span>
+
+</div>
 </div>
 
 <div id="contador" class="contador-max">Carregando...</div>
@@ -297,8 +321,8 @@ style="width:90%;max-width:400px;height:500px;border:none;border-radius:12px;"><
 </footer>
 
 <script>
-// CONTADOR COPA
 const dataCopa = new Date("June 11, 2026 15:00:00").getTime();
+
 setInterval(()=>{
 let agora=new Date().getTime();
 let dist=dataCopa-agora;
@@ -309,7 +333,6 @@ let s=Math.floor((dist%(1000*60))/1000);
 document.getElementById("contador").innerHTML=d+"d "+h+"h "+m+"m "+s+"s";
 },1000);
 
-// CONTADOR VISUALIZAÇÕES
 setInterval(()=>{
 let num=document.getElementById("viewers");
 let val=parseInt(num.innerText);
