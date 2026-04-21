@@ -93,7 +93,7 @@ border-radius:12px
 /* CONTADOR VISUALIZAÇÃO */
 .counter{margin-top:30px;color:#00ffcc}
 
-/* CONTADOR COPA (ELEGANTE) */
+/* CONTADOR COPA */
 .contador-max{
 font-size:2em;
 font-weight:bold;
@@ -113,33 +113,11 @@ animation:fadePulse 2s infinite;
 100%{opacity:.9;transform:scale(1)}
 }
 
-/* BANDEIRAS ULTRA */
+/* BANDEIRAS (SEM BORDA LATERAL) */
 .flags-wrapper{
-position:relative;
 overflow:hidden;
 width:100%;
 margin-top:25px;
-}
-
-.flags-wrapper::before,
-.flags-wrapper::after{
-content:"";
-position:absolute;
-top:0;
-width:80px;
-height:100%;
-z-index:2;
-pointer-events:none;
-}
-
-.flags-wrapper::before{
-left:0;
-background:linear-gradient(to right,#05070f,transparent);
-}
-
-.flags-wrapper::after{
-right:0;
-background:linear-gradient(to left,#05070f,transparent);
 }
 
 .flags-track{
@@ -150,7 +128,7 @@ animation:scrollUltra 25s linear infinite;
 }
 
 .flags-track span{
-margin:0 10px;
+margin:0 12px;
 display:inline-block;
 transition:0.3s;
 }
