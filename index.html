@@ -371,26 +371,37 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <a href="https://wa.me/5511957197274" class="float contratar-servico">
 🚀 Contratar serviço agora
 </a>
-
-<footer style=.contratar-btn{
-right:20px;
+.contratar-servico{
+position:fixed;
 bottom:20px;
-padding:16px 24px;
-border-radius:50px;
-font-size:16px;
-font-weight:bold;
+right:20px;
 background:linear-gradient(90deg,#00ffcc,#25D366);
 color:#000;
+padding:16px 28px;
+border-radius:50px;
+font-weight:bold;
+font-size:16px;
+text-decoration:none;
 box-shadow:0 0 20px rgba(0,255,204,0.6);
-animation:pulseContratar 1.5s infinite;
+animation:flutuar 1.5s infinite;
 z-index:9999;
 }
 
-@keyframes pulseContratar{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
+@keyframes flutuar{
+0%{
+transform:scale(1);
+box-shadow:0 0 10px rgba(0,255,204,0.4);
 }
+50%{
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(0,255,204,0.8);
+}
+100%{
+transform:scale(1);
+box-shadow:0 0 10px rgba(0,255,204,0.4);
+}
+}
+
 © 2026 RP Entretenimento
 </footer>
 
