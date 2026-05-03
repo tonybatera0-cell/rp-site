@@ -6,6 +6,8 @@
 <title>RP Entretenimento</title>
 
 <style>
+
+/* ===== FUNDO ORIGINAL ===== */
 body{
 margin:0;
 font-family:Arial;
@@ -16,6 +18,7 @@ linear-gradient(180deg,#020617,#05070f);
 color:#fff;
 }
 
+/* ===== HEADER ===== */
 header{
 background:rgba(15,23,42,0.7);
 backdrop-filter:blur(12px);
@@ -45,6 +48,37 @@ max-width:220px;
 filter:drop-shadow(0 0 10px rgba(0,255,204,0.5));
 }
 
+/* ===== ALERTA ORIGINAL ===== */
+.alert{
+background:linear-gradient(90deg,#00ffcc,#25D366);
+color:#000;
+padding:10px;
+text-align:center;
+font-weight:bold;
+border-radius:8px;
+margin:10px;
+}
+
+/* ===== NOVO ALERTA AO VIVO ===== */
+.live-alert{
+background:linear-gradient(90deg,#ff0000,#ff3c00);
+color:#fff;
+padding:12px;
+text-align:center;
+font-weight:bold;
+border-radius:8px;
+margin:10px;
+animation:piscarLive 1s infinite;
+box-shadow:0 0 20px rgba(255,0,0,0.8);
+}
+
+@keyframes piscarLive{
+0%{opacity:1}
+50%{opacity:.3}
+100%{opacity:1}
+}
+
+/* ===== SECTION ===== */
 .section{
 padding:60px 20px;
 text-align:center;
@@ -56,10 +90,12 @@ from{opacity:0;transform:translateY(20px)}
 to{opacity:1;transform:translateY(0)}
 }
 
+/* ===== TITULOS ===== */
 h2{
 text-shadow:0 0 10px rgba(0,255,204,0.3);
 }
 
+/* ===== BOTÕES ===== */
 .btn{
 background:linear-gradient(145deg,#00ffcc,#25D366);
 color:#000;
@@ -104,7 +140,7 @@ left:100%;
 100%{transform:scale(1)}
 }
 
-/* CARROSSEL */
+/* ===== CARROSSEL ===== */
 .carousel-wrapper{
 overflow:hidden;
 margin-top:20px;
@@ -135,7 +171,7 @@ transform:scale(1.08);
 100%{transform:translateX(-50%)}
 }
 
-/* COMPARAÇÃO */
+/* ===== COMPARAÇÃO ===== */
 .compare-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -148,10 +184,15 @@ margin:auto;
 background:rgba(15,23,42,0.7);
 padding:20px;
 border-radius:15px;
-box-shadow:0 0 15px rgba(0,255,204,0.1);
+transition:.3s;
 }
 
-/* FAQ */
+.compare-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(255,215,0,0.4);
+}
+
+/* ===== FAQ ===== */
 .faq{
 max-width:800px;
 margin:auto;
@@ -165,7 +206,7 @@ border-radius:10px;
 margin:10px 0;
 }
 
-/* DEPOIMENTOS */
+/* ===== DEPOIMENTOS ===== */
 .testimonials{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -179,8 +220,60 @@ background:rgba(15,23,42,0.7);
 padding:20px;
 border-radius:15px;
 }
+
+/* ===== CONTADOR PREMIUM ===== */
+#contador{
+font-size:2.3em;
+font-weight:bold;
+letter-spacing:2px;
+background:linear-gradient(45deg,#FFD700,#C89B00);
+color:#000;
+padding:18px 25px;
+border-radius:12px;
+display:inline-block;
+box-shadow:0 0 20px rgba(255,215,0,0.6);
+animation:pulseContador 1.5s infinite;
+}
+
+@keyframes pulseContador{
+50%{transform:scale(1.05)}
+}
+
+/* ===== PLANOS (SEM REMOVER) ===== */
+.plans .plan:nth-child(2),
+.plans .plan:nth-child(3),
+.plans .plan:nth-child(4){
+display:none;
+}
+
+.plans{
+justify-content:center;
+}
+
+.plans .plan:first-child{
+transform:scale(1.1);
+border:2px solid #FFD700;
+box-shadow:0 0 30px rgba(255,215,0,0.4);
+}
+
+/* ===== PROVA SOCIAL ===== */
+#popupCompra{
+position:fixed;
+bottom:90px;
+left:20px;
+background:#000;
+color:#FFD700;
+padding:12px 18px;
+border-radius:10px;
+font-size:14px;
+box-shadow:0 0 15px rgba(255,215,0,0.5);
+display:none;
+z-index:9999;
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
@@ -192,7 +285,10 @@ border-radius:15px;
 
 <div class="alert">⏳ Copa do Mundo prestes a começar — garanta seu acesso</div>
 
-<section class="section">
+<div class="live-alert">
+🔴 AO VIVO AGORA • JOGOS EM ANDAMENTO NESSE MOMENTO
+</div> 
+  <section class="section">
 <h2>🚨 Veja como funciona</h2>
 <iframe src="https://www.youtube.com/embed/82CyzF4tYb4"
 style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
@@ -237,6 +333,7 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 
 <section class="section">
 <h2>💸 Compare os preços</h2>
+
 <div class="compare-grid">
 <div class="compare-card">Netflix<br>R$39,90</div>
 <div class="compare-card">Disney+<br>R$33,90</div>
@@ -246,7 +343,9 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <div class="compare-card">TV a Cabo<br>R$120,00</div>
 </div>
 
-<h2 style="margin-top:30px;color:#00ffcc;">Tudo isso por apenas R$39,99 😱</h2>
+<h2 style="margin-top:30px;color:#00ffcc;">
+Tudo isso por apenas R$39,99 😱
+</h2>
 </section>
 
 <section class="section">
@@ -261,6 +360,7 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <section class="section">
 <h2>❓ Perguntas Frequentes</h2>
 <div class="faq">
+
 <details>
 <summary>Funciona na Smart TV?</summary>
 <p>Sim, funciona em Smart TVs, TV Box, celular e PC.</p>
@@ -275,8 +375,10 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <summary>Tem filmes e séries atualizados?</summary>
 <p>Sim, catálogo atualizado diariamente.</p>
 </details>
+
 </div>
 </section>
+
 <section class="section">
 <h2>💎 Experiência Premium Completa</h2>
 <p>Acesse o melhor do entretenimento com qualidade máxima.</p>
@@ -299,27 +401,19 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 
 <div class="carousel-wrapper">
 <div class="carousel-track" style="font-size:55px;">
-<span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇩🇪</span>
-<span>🇪🇸</span><span>🇵🇹</span><span>🇺🇸</span><span>🇯🇵</span>
-<span>🇰🇷</span><span>🇲🇽</span><span>🇨🇦</span><span>🇮🇹</span>
-<span>🇳🇱</span><span>🇧🇪</span><span>🇺🇾</span><span>🇨🇴</span>
-<span>🇨🇭</span><span>🇭🇷</span>
-
-<span>🇧🇷</span><span>🇦🇷</span><span>🇫🇷</span><span>🇩🇪</span>
-<span>🇪🇸</span><span>🇵🇹</span><span>🇺🇸</span><span>🇯🇵</span>
-<span>🇰🇷</span><span>🇲🇽</span><span>🇨🇦</span><span>🇮🇹</span>
-<span>🇳🇱</span><span>🇧🇪</span><span>🇺🇾</span><span>🇨🇴</span>
-<span>🇨🇭</span><span>🇭🇷</span>
+🇧🇷 🇦🇷 🇫🇷 🇩🇪 🇪🇸 🇵🇹 🇺🇸 🇯🇵 🇰🇷 🇲🇽 🇨🇦 🇮🇹 🇳🇱 🇧🇪 🇺🇾 🇨🇴 🇨🇭 🇭🇷
+🇧🇷 🇦🇷 🇫🇷 🇩🇪 🇪🇸 🇵🇹 🇺🇸 🇯🇵 🇰🇷 🇲🇽 🇨🇦 🇮🇹 🇳🇱 🇧🇪 🇺🇾 🇨🇴 🇨🇭 🇭🇷
 </div>
 </div>
 
-<div id="contador" class="contador-max"></div>
+<div id="contador"></div>
 <a href="https://wa.me/5511957197274" class="btn">🔥 QUERO ASSISTIR</a>
 </section>
 
 <section class="section">
 <h2>📡 AO VIVO AGORA</h2>
 <div class="live-bar">🔴 TRANSMISSÃO ATIVA</div>
+
 <div class="ticker">
 <div class="ticker-track">
 ⚽ Jogos ao vivo • 🎬 Filmes • 📺 Séries • 🏆 Campeonatos • ⚽ Jogos ao vivo • 🎬 Filmes • 📺 Séries • 🏆 Campeonatos
@@ -327,10 +421,16 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 </div>
 </section>
 
+<!-- FRASE DE IMPACTO -->
+<p style="text-align:center;color:#FFD700;font-size:20px;font-weight:bold;">
+🔥 Um único plano. Acesso total. Sem complicação.
+</p>
+
 <section class="section">
 <h2>💰 Planos</h2>
 
 <div class="plans">
+
 <div class="plan">
 <h3>Mensal</h3>
 <div class="old">R$59,99</div>
@@ -359,7 +459,14 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <div class="price">R$279,99</div>
 <a href="https://wa.me/5511957197274" class="btn">Escolher</a>
 </div>
+
 </div>
+
+<!-- REFORÇO -->
+<p style="text-align:center;margin-top:20px;color:#FFD700;font-weight:bold;">
+💸 Por apenas R$39,99 você substitui vários streamings
+</p>
+
 </section>
 
 <section class="section">
@@ -367,3 +474,70 @@ style="width:90%;max-width:400px;height:500px;border-radius:12px;"></iframe>
 <p>Smart TV • Android • iPhone • TV Box • Notebook</p>
 <a href="https://wa.me/5511957197274" class="btn">🔥 Quero aderir agora</a>
 </section>
+
+<!-- POPUP -->
+<div id="popupCompra"></div>
+<footer style="text-align:center;padding:20px;">
+© 2026 RP Entretenimento
+</footer>
+
+<script>
+
+/* =========================
+   CONTADOR COPA 2026 CORRETO
+========================= */
+const dataCopa = new Date("2026-06-11T15:00:00-03:00").getTime();
+
+function atualizarContador(){
+const el = document.getElementById("contador");
+if(!el) return;
+
+const agora = new Date().getTime();
+const diferenca = dataCopa - agora;
+
+if(diferenca <= 0){
+el.innerHTML = "🔥 COMEÇOU!";
+return;
+}
+
+const dias = Math.floor(diferenca / (1000*60*60*24));
+const horas = Math.floor((diferenca % (1000*60*60*24)) / (1000*60*60));
+const minutos = Math.floor((diferenca % (1000*60*60)) / (1000*60));
+const segundos = Math.floor((diferenca % (1000*60)) / 1000);
+
+el.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+}
+
+setInterval(atualizarContador, 1000);
+atualizarContador();
+
+
+/* =========================
+   PROVA SOCIAL (COMPRAS)
+========================= */
+const nomes = [
+"Carlos","João","Lucas","Pedro","Rafael",
+"Bruno","Felipe","André","Marcos","Ricardo"
+];
+
+function mostrarCompra(){
+const popup = document.getElementById("popupCompra");
+if(!popup) return;
+
+const nome = nomes[Math.floor(Math.random()*nomes.length)];
+
+popup.innerHTML = `🔥 ${nome} acabou de contratar o plano`;
+
+popup.style.display = "block";
+
+setTimeout(()=>{
+popup.style.display = "none";
+},4000);
+}
+
+setInterval(mostrarCompra, 8000);
+
+</script>
+
+</body>
+</html>
